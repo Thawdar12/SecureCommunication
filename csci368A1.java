@@ -13,7 +13,7 @@ import javax.crypto.spec.SecretKeySpec;
 import java.security.*;
 import java.util.Base64;
 
-public class csci368A1 {
+public class CSCI368_A1 {
     private static final String SYMMETRIC_KEY_ALGORITHM = "AES";
 
     private BigInteger alicePrivateKey;
@@ -140,7 +140,7 @@ public class csci368A1 {
     }
 
     public static void main(String[] args) throws Exception {
-        csci368A1 app = new csci368A1();
+        CSCI368_A1 app = new CSCI368_A1();
 
         // Read IP and port from input
         Scanner scanner = new Scanner(System.in);
@@ -172,7 +172,8 @@ public class csci368A1 {
 
             // Connecting to the server
             System.out.println("Connecting to the server...");
-            System.out.println("Successfully connected to the server.");
+            System.out.println("Connected!");
+            System.out.println("Successfully connected to the server!");
 
             // Read Alice's message from input
             System.out.print("Alice's message: ");
@@ -186,9 +187,9 @@ public class csci368A1 {
             // Connecting and sending Bob's message to Alice
             System.out.println("Connecting to the server...");
             app.senderActions(app.bobPrivateKey, new BigInteger(alicePublicKeyInput), bobMessage.getBytes(), p, g);
-            System.out.println("Successfully connected to the server.");
+            System.out.println("Connected!");
         } catch (NumberFormatException e) {
-            System.out.println("!!! Invalid input. Please enter valid integer values for keys. !!!");
+            System.out.println("ERROR: Invalid input. Please enter valid integer values for keys.");
         }
 
     }
